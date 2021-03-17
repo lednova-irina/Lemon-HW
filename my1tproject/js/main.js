@@ -52,16 +52,16 @@ if (c == 0) {
 
 
 //task 1.3
-function calcuate(d, number) {
+function calcuate(ext, number) {
     let quantitybyte;
     const n = 1024;
-    if (d == 'Byte') {
+    if (ext == 'Byte') {
         quantitybyte = number;
-    } else if (d == 'KB') {
+    } else if (ext == 'KB') {
         quantitybyte = n * number;
-    } else if (d == 'MB') {
+    } else if (ext == 'MB') {
         quantitybyte = (n ** 2) * number;
-    } else if (d == 'GB') {
+    } else if (ext == 'GB') {
         quantitybyte = (n ** 3) * number
     }
 

@@ -201,3 +201,17 @@ function findNumberDevidedBy(minValue, devider) {
     }
 }
 printResult("2.5", findNumberDevidedBy(300, 17));
+
+
+// task 2.6
+function maxValueDevision(x, y) {
+    while (x != y) {
+        if (x > y) {
+            x = x - y;
+        } else {
+            y = y - x;
+        }
+    }
+    return x;
+}
+printResult("2.6", maxValueDevision(200, 780));

@@ -189,3 +189,15 @@ printResult("2.4.2", sum2)
 
 
 // task 2.5
+let minValue;
+let devider;
+function findNumberDevidedBy(minValue, devider) {
+    while (true) {
+        if (minValue % devider == 0) {
+            return minValue;
+        } else {
+            minValue++;
+        }
+    }
+}
+printResult(2.5, findNumberDevidedBy(300, 17));

@@ -1,36 +1,17 @@
 function printResult(taskNumber, taskResult) {
-    console.log(`Result of the task ${taskNumber}: ${taskResult}`)
+    console.log(`Result of the task ${taskNumber}: ${taskResult}`);
 }
 
 //task 1.1.1
+function getNumber(numb) {
 
-const a = 6;
-
-if (a == 0) {
-    printResult("1.1.1", "ноль")
-} else if (a == 1) {
-    printResult("1.1.1", "один")
-} else if (a == 2) {
-    printResult("1.1.1", "два")
-} else if (a == 3) {
-    printResult("1.1.1", "три")
-} else if (a == 4) {
-    printResult("1.1.1", "четыре")
-} else if (a == 5) {
-    printResult("1.1.1", "пять")
-} else if (a == 6) {
-    printResult("1.1.1", "шесть")
-} else if (a == 7) {
-    printResult("1.1.1", "семь")
-} else if (a == 8) {
-    printResult("1.1.1", "восемь")
-} else if (a == 9) {
-    printResult("1.1.1", "девять")
+    const numbers = ["ноль", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"];
+    return numbers[numb];
 }
+printResult("1.1.1", getNumber(9));
 
 
 // task 1.1.2
-
 const b = 5;
 let result;
 switch (b) {
@@ -45,83 +26,85 @@ switch (b) {
     case 8: result = 'восемь'; break;
     case 9: result = 'девять'; break;
 }
-printResult("1.1.2", result)
+printResult("1.1.2", result);
 
 
 //task 1.2
-const c = -3;
-
-if (c == 0) {
-    printResult("1.2", "ноль")
-} else if (c > 0) {
-    printResult("1.2", "положительное число");
-} else if (c < 0) {
-    printResult("1.2", "отрицательное число");
+function definitionC(c) {
+    if (c == 0) {
+        return "ноль";
+    } else if (c > 0) {
+        return "положительное число";
+    } else if (c < 0) {
+        return "отрицательное число";
+    }
 }
+printResult("1.2", definitionC(-3));
+
 
 
 //task 1.3
-function calcuate(ext, number) {
+function calcuateBytes(unit, number) {
     let quantitybyte;
     const n = 1024;
-    if (ext == 'Byte') {
+    if (unit == 'Byte') {
         quantitybyte = number;
-    } else if (ext == 'KB') {
+    } else if (unit == 'KB') {
         quantitybyte = n * number;
-    } else if (ext == 'MB') {
+    } else if (unit == 'MB') {
         quantitybyte = (n ** 2) * number;
-    } else if (ext == 'GB') {
+    } else if (unit == 'GB') {
         quantitybyte = (n ** 3) * number
     }
 
     return quantitybyte;
 }
 
-printResult("1.3", calcuate('Byte', 6));
-printResult("1.3", calcuate('KB', 6));
-printResult("1.3", calcuate('MB', 6));
-printResult("1.3", calcuate('GB', 6));
+printResult("1.3", calcuateBytes('Byte', 6));
+printResult("1.3", calcuateBytes('KB', 6));
+printResult("1.3", calcuateBytes('MB', 6));
+printResult("1.3", calcuateBytes('GB', 6));
 
 
 //task 1.4
+function calcTotalPerc(creditPercent, duration) { //Сколько процентов заплатит клиент за все время
+    const result = creditPercent * duration;
+    return result;
+}
+printResult("1.4", `Сколько процентов заплатит клиент за все время: ${calcTotalPerc(0.2, 5)}`);
 
-const creditPercent = 0.2; //% ставка по кредиту 
-const creditBody = 200000; // сумма займа
-const duration = 5; //длительность договора
+function calcPercForOneYear(creditPercent) {//Сколько процентов заплатит клиент за один календарный год
+    const result = creditPercent;
+    return result;
+}
+printResult("1.4", `Сколько процентов заплатит клиент за один календарный год: ${calcPercForOneYear(0, 3)}`);
 
-//Сколько процентов заплатит клиент за все время
-const result1 = creditPercent * duration;
-printResult("1.4", `Сколько процентов заплатит клиент за все время: ${result1}`);
-
-//Сколько процентов заплатит клиент за один календарный год
-const result2 = creditPercent;
-printResult("1.4", `Сколько процентов заплатит клиент за один календарный год: ${result2}`);
-
-//Какое общее количество денежных средств клиента банка выплатит за все года
-const result3 = creditBody + (duration * creditBody * creditPercent);
-printResult("1.4", `Какое общее количество денежных средств клиента банка выплатит за все года: ${result3}`);
-
+function totalAmount(creditBody, creditPercent, duration) { //Какое общее количество денежных средств клиента банка выплатит за все года
+    const result = creditBody + (duration * creditBody * creditPercent);
+    return result;
+}
+printResult("1.4", `Какое общее количество денежных средств клиента банка выплатит за все года: ${totalAmount(20000, 0.5, 6)}`);
 
 
 // task 2.1.1
-
-let str = "Эта строка должна выводиться в обратном порядке";
-let strRev = "";
-for (i = str.length - 1; i >= 0; i--) {
-    strRev += str[i];
+function stringRevers(str) {
+    let strRev = "";
+    for (i = str.length - 1; i >= 0; i--) {
+        strRev += str[i];
+    }
+    return strRev;
 }
-printResult("2.1.1", strRev);
+printResult("2.1.1", stringRevers("Эта строка должна выводиться в обратном порядке"));
+
 
 // task 2.1.2
 function reverseStr(text) {
     return text.split('').reverse().join('');
 }
-printResult("2.1.2", reverseStr("Эта строка тоже должна выводиться в обратном порядке"))
-
+printResult("2.1.2", reverseStr("Эта строка тоже должна выводиться в обратном порядке"));
 
 
 // task 2.2.1
-
 function factorial1(n) {
     let result = 1;
     while (n > 0) {
@@ -131,8 +114,8 @@ function factorial1(n) {
 }
 printResult("2.2.1", factorial1(5));
 
-// task 2.2.2
 
+// task 2.2.2
 function factorial2(n, result) {
     result = result || 1;
     if (n == 0) {
@@ -145,52 +128,49 @@ printResult("2.2.2", factorial2(3,));
 
 
 // task 2.3
-
-let inputNum = 30,
-    outputDividers = [];
-const dividersAmount = 3;
-for (let i = 2; i != inputNum; i++) {
-    if (inputNum % i == 0) {
-        outputDividers.push(i);
+function outputDividersMass(inputNum, dividersAmount) {
+    let outputDividers = [];
+    for (let i = 2; i != inputNum; i++) {
+        if (inputNum % i == 0) {
+            outputDividers.push(i);
+        }
+        if (outputDividers.length == dividersAmount) break;
     }
-    if (outputDividers.length == dividersAmount) break;
+    return outputDividers;
 }
-printResult("2.3", outputDividers);
+printResult("2.3", outputDividersMass(30, 3));
 
 
 
 // task 2.4.1
-
-let number = 8786592;
-let sum = 0;
-while (number > 0) {
-    let t = number % 10;
-    if (t % 2 === 0) {
-        sum += t;
+function numbersForEach1(number) {
+    while (number > 0) {
+        let sum = 0;
+        let temp = number % 10;
+        if (temp % 2 === 0) {
+            sum += temp;
+        }
+        return number = parseInt(number / 10);
     }
-    number = parseInt(number / 10);
 }
-printResult("2.4.1", sum)
+printResult("2.4.1", numbersForEach1(9894763));
+
 
 // task 2.4.2
-let string2 = '3654982';
-let sum2 = 0;
-function numbersForEach(stringToParse) {
+function numbersForEach2(stringToParse) {
+    let sum = 0;
     let numbers = stringToParse.split('');
     for (let i = 0; i < numbers.length; i++) {
         if (+numbers[i] % 2 === 0) {
-            sum2 += +numbers[i];
+            sum += +numbers[i];
         }
     }
-    return sum2;
+    return sum;
 }
-numbersForEach(string2);
-printResult("2.4.2", sum2)
+printResult("2.4.2", numbersForEach2('3654982'));
 
 
 // task 2.5
-let minValue;
-let devider;
 function findNumberDevidedBy(minValue, devider) {
     while (true) {
         if (minValue % devider == 0) {

@@ -1,27 +1,35 @@
-//task 1.1
+function printResult(taskNumber, taskResult) {
+    console.log(`Result of the task ${taskNumber}: ${taskResult}`)
+}
+
+//task 1.1.1
+
 const a = 6;
 
 if (a == 0) {
-    console.log("ноль")
+    printResult("1.1.1", "ноль")
 } else if (a == 1) {
-    console.log("один");
+    printResult("1.1.1", "один")
 } else if (a == 2) {
-    console.log("два");
+    printResult("1.1.1", "два")
 } else if (a == 3) {
-    console.log("три");
+    printResult("1.1.1", "три")
 } else if (a == 4) {
-    console.log("четыре");
+    printResult("1.1.1", "четыре")
 } else if (a == 5) {
-    console.log("пять");
+    printResult("1.1.1", "пять")
 } else if (a == 6) {
-    console.log("шесть");
+    printResult("1.1.1", "шесть")
 } else if (a == 7) {
-    console.log("семь");
+    printResult("1.1.1", "семь")
 } else if (a == 8) {
-    console.log("восемь");
+    printResult("1.1.1", "восемь")
 } else if (a == 9) {
-    console.log("девять");
+    printResult("1.1.1", "девять")
 }
+
+
+// task 1.1.2
 
 const b = 5;
 let result;
@@ -37,7 +45,8 @@ switch (b) {
     case 8: result = 'восемь'; break;
     case 9: result = 'девять'; break;
 }
-console.log(result);
+printResult("1.1.2", result)
+
 
 //task 1.2
 const c = -3;
@@ -92,3 +101,91 @@ console.log(`Сколько процентов заплатит клиент з�
 const result3 = creditBody + (duration * creditBody * creditPercent);
 console.log(`Какое общее количество денежных средств клиента банка выплатит за все года: ${result3}`);
 
+
+
+// task 2.1.1
+
+let str = "Эта строка должна выводиться в обратном порядке";
+let strRev = "";
+for (i = str.length - 1; i >= 0; i--) {
+    strRev += str[i];
+}
+printResult("2.1.1", strRev);
+
+// task 2.1.2
+function reverseStr(text) {
+    return text.split('').reverse().join('');
+}
+printResult("2.1.2", reverseStr("Эта строка тоже должна выводиться в обратном порядке"))
+
+
+
+// task 2.2.1
+
+function factorial1(n) {
+    let result = 1;
+    while (n > 0) {
+        result *= n--;
+    }
+    return result;
+}
+console.log(factorial1(5))
+
+// task 2.2.2
+
+function factorial2(n, result) {
+    result = result || 1;
+    if (n == 0) {
+        return result;
+    } else {
+        return factorial2(n - 1, result * n);
+    }
+}
+console.log(factorial2(3,))
+
+
+// task 2.3
+
+let inputNum = 30,
+    outputDividers = [];
+const dividersAmount = 3;
+for (let i = 2; i != inputNum; i++) {
+    if (inputNum % i == 0) {
+        outputDividers.push(i);
+    }
+    if (outputDividers.length == dividersAmount) break;
+}
+printResult("2.3", outputDividers);
+
+
+
+// task 2.4.1
+
+let number = 8786592;
+let sum = 0;
+while (number > 0) {
+    let t = number % 10;
+    if (t % 2 === 0) {
+        sum += t;
+    }
+    number = parseInt(number / 10);
+}
+printResult("2.4.1", sum)
+
+// task 2.4.2
+let string2 = '3654982';
+let sum2 = 0;
+function numbersForEach(stringToParse) {
+    let numbers = stringToParse.split('');
+    for (let i = 0; i < numbers.length; i++) {
+        if (+numbers[i] % 2 === 0) {
+            sum2 += +numbers[i];
+        }
+    }
+    return sum2;
+}
+numbersForEach(string2);
+printResult("2.4.2", sum2)
+
+
+// task 2.5

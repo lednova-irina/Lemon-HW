@@ -52,11 +52,11 @@ printResult("1.1.2", result)
 const c = -3;
 
 if (c == 0) {
-    console.log("ноль")
+    printResult("1.2", "ноль")
 } else if (c > 0) {
-    console.log("положительное число");
+    printResult("1.2", "положительное число");
 } else if (c < 0) {
-    console.log("отрицательное число");
+    printResult("1.2", "отрицательное число");
 }
 
 
@@ -77,10 +77,10 @@ function calcuate(ext, number) {
     return quantitybyte;
 }
 
-console.log(calcuate('Byte', 6))
-console.log(calcuate('KB', 6))
-console.log(calcuate('MB', 6))
-console.log(calcuate('GB', 6))
+printResult("1.3", calcuate('Byte', 6));
+printResult("1.3", calcuate('KB', 6));
+printResult("1.3", calcuate('MB', 6));
+printResult("1.3", calcuate('GB', 6));
 
 
 //task 1.4
@@ -91,15 +91,15 @@ const duration = 5; //длительность договора
 
 //Сколько процентов заплатит клиент за все время
 const result1 = creditPercent * duration;
-console.log(`Сколько процентов заплатит клиент за все время: ${result1}`);
+printResult("1.4", `Сколько процентов заплатит клиент за все время: ${result1}`);
 
 //Сколько процентов заплатит клиент за один календарный год
 const result2 = creditPercent;
-console.log(`Сколько процентов заплатит клиент за один календарный год: ${result2}`);
+printResult("1.4", `Сколько процентов заплатит клиент за один календарный год: ${result2}`);
 
 //Какое общее количество денежных средств клиента банка выплатит за все года
 const result3 = creditBody + (duration * creditBody * creditPercent);
-console.log(`Какое общее количество денежных средств клиента банка выплатит за все года: ${result3}`);
+printResult("1.4", `Какое общее количество денежных средств клиента банка выплатит за все года: ${result3}`);
 
 
 
@@ -129,7 +129,7 @@ function factorial1(n) {
     }
     return result;
 }
-console.log(factorial1(5))
+printResult("2.2.1", factorial1(5));
 
 // task 2.2.2
 
@@ -141,7 +141,7 @@ function factorial2(n, result) {
         return factorial2(n - 1, result * n);
     }
 }
-console.log(factorial2(3,))
+printResult("2.2.2", factorial2(3,));
 
 
 // task 2.3
@@ -200,4 +200,4 @@ function findNumberDevidedBy(minValue, devider) {
         }
     }
 }
-printResult(2.5, findNumberDevidedBy(300, 17));
+printResult("2.5", findNumberDevidedBy(300, 17));

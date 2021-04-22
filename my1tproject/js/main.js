@@ -45,19 +45,19 @@ printResult("1.2", definitionC(-3));
 
 //task 1.3
 function calcuateBytes(unit, number) {
-    let quantitybyte;
+    let quantityByte;
     const n = 1024;
     if (unit == 'Byte') {
-        quantitybyte = number;
+        quantityByte = number;
     } else if (unit == 'KB') {
-        quantitybyte = n * number;
+        quantityByte = n * number;
     } else if (unit == 'MB') {
-        quantitybyte = (n ** 2) * number;
+        quantityByte = (n ** 2) * number;
     } else if (unit == 'GB') {
-        quantitybyte = (n ** 3) * number
+        quantityByte = (n ** 3) * number
     }
 
-    return quantitybyte;
+    return quantityByte;
 }
 
 printResult("1.3", calcuateBytes('Byte', 6));

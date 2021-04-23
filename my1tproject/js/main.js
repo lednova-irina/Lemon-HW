@@ -236,3 +236,30 @@ function maxValueDivision(x, y) {
   return x;
 }
 printResult("2.6", maxValueDivision(200, 780));
+
+// task 3.3
+
+function generateArray(dimentionArray) {
+  const result = [];
+  for (let i = 0; i < dimentionArray; i++) {
+    result[i] = [];
+    for (let j = 0; j < dimentionArray; j++) {
+      result[i][j] = Math.floor(Math.random() * 10);
+    }
+  }
+  return result;
+}
+const arrayValue = generateArray(4);
+console.dir(arrayValue);
+
+function transposeArray(arr) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      result[j] = result[j] || [];
+      result[j][i] = arrayValue[i][j];
+    }
+  }
+  return result;
+}
+console.dir(transposeArray(arrayValue));

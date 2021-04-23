@@ -187,14 +187,15 @@ printResult("2.3", outputDividersMass(30, 3));
 
 // task 2.4.1
 function numbersForEach1(number) {
+  let sum = 0;
   while (number > 0) {
-    let sum = 0;
     let temp = number % 10;
     if (temp % 2 === 0) {
       sum += temp;
     }
-    return (number = parseInt(number / 10));
+    number = parseInt(number / 10);
   }
+  return sum;
 }
 printResult("2.4.1", numbersForEach1(9894763));
 

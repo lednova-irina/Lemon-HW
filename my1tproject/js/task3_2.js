@@ -39,3 +39,16 @@ function outputDividersArr(inputNum, dividersAmount) {
   return calc(inputNum, dividersAmount);
 }
 printResult("3.2: 2.3", outputDividersArr(30, 3));
+
+function numbersForEach(number) {
+  const temp = parseInt(number / 10);
+  const modulo = number % 10;
+  if (number == 0) {
+    return 0;
+  }
+  if (modulo % 2 === 0) {
+    return modulo + numbersForEach(temp);
+  }
+  return numbersForEach(temp);
+}
+printResult("2.4.1", numbersForEach(9894763));

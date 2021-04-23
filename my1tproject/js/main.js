@@ -213,19 +213,19 @@ function numbersForEach2(stringToParse) {
 printResult("2.4.2", numbersForEach2("3654982"));
 
 // task 2.5
-function findNumberDevidedBy(minValue, devider) {
+function findNumberDividedBy(minValue, divider) {
   while (true) {
-    if (minValue % devider == 0) {
+    if (minValue % divider == 0) {
       return minValue;
     } else {
       minValue++;
     }
   }
 }
-printResult("2.5", findNumberDevidedBy(300, 17));
+printResult("2.5", findNumberDividedBy(300, 17));
 
 // task 2.6
-function maxValueDevision(x, y) {
+function maxValueDivision(x, y) {
   while (x != y) {
     if (x > y) {
       x = x - y;
@@ -235,4 +235,4 @@ function maxValueDevision(x, y) {
   }
   return x;
 }
-printResult("2.6", maxValueDevision(200, 780));
+printResult("2.6", maxValueDivision(200, 780));

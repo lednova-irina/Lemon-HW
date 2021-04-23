@@ -61,28 +61,13 @@ function findNumberDividedBy(minValue, divider) {
 }
 printResult("3.2: 2.5", findNumberDividedBy(300, 17));
 
-/*function maxValueDivision(x, y) {
-  while (x != y) {
-    if (x > y) {
-      x = x - y;
-    } else {
-      y = y - x;
-    }
-  }
-  return x;
-}
-printResult("2.6", maxValueDivision(200, 780));
-*/
-
 function maxValueDivision(x, y) {
   if (x == y) {
     return x;
-  } else if (x > y) {
-    x = x - y;
-    return maxValueDivision(x, y);
-  } else {
-    y = y - x;
-    return maxValueDivision(x, y);
   }
+  if (x > y) {
+    return maxValueDivision(x - y, y);
+  }
+  return maxValueDivision(x, y - x);
 }
 printResult("3.2: 2.6", maxValueDivision(200, 780));

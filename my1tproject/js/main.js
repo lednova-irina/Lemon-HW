@@ -1,5 +1,6 @@
 function printResult(taskNumber, taskResult) {
-  console.log(`Result of the task ${taskNumber}: ${taskResult}`);
+  console.info(`Result of the task ${taskNumber}: `);
+  console.dir(taskResult);
 }
 
 //task 1.1.1
@@ -263,3 +264,29 @@ function transposeArray(arr) {
   return result;
 }
 console.dir(transposeArray(arrayValue));
+printResult("3.3", transposeArray(arrayValue));
+
+//task 3.4
+
+function MultiplyMatrix(matrix1, matrix2) {
+  let rowsM1 = matrix1.length;
+  let colsM1 = matrix1[0].length;
+  let rowsM2 = matrix2.length;
+  let colsM2 = matrix2[0].length;
+  let result = [];
+  if (colsM1 != rowsM2) {
+    return false;
+  }
+  for (let i = 0; i < rowsM1; i++) {
+    result[i] = [];
+  }
+  for (let k = 0; k < colsM2; k++) {
+    for (let i = 0; i < rowsM1; i++) {
+      let t = 0;
+      for (let j = 0; j < rowsM2; j++) t += matrix1[i][j] * matrix2[j][k];
+      result[i][k] = t;
+    }
+  }
+  return result;
+}
+printResult("3.4", MultiplyMatrix(generateArray(3), generateArray(3)));

@@ -258,7 +258,7 @@ function transposeArray(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length; j++) {
       result[j] = result[j] || [];
-      result[j][i] = arrayValue[i][j];
+      result[j][i] = arr[i][j];
     }
   }
   return result;
@@ -294,8 +294,13 @@ printResult("3.4", MultiplyMatrix(generateArray(3), generateArray(3)));
 //task 3.5.1
 
 function maxSumColumn(arrayValue) {
-  let columnSum = arrayValue[0].slice();
+  let columnSum = arrayValue[0];
   let maxColSum = 0;
+  const result = {
+    targetIndex: 0,
+    maxSum: 0,
+    colNumber: 0,
+  };
   for (let str = 1; str < arrayValue.length; str++) {
     for (let col = 0; col < columnSum.length; col++) {
       columnSum[col] += arrayValue[str][col];
@@ -304,11 +309,31 @@ function maxSumColumn(arrayValue) {
   for (let i = 0; i < columnSum.length; i++) {
     if (maxColSum < columnSum[i]) {
       maxColSum = columnSum[i];
-    } else {
-      return maxColSum;
+      result.maxSum = maxColSum;
+      result.targetIndex = i;
+      result.colNumber = i + 1;
     }
   }
+  return result;
 }
-printResult("3.5.1", maxSumColumn(generateArray(3)));
+printResult(
+  "3.5.1",
+  maxSumColumn([
+    [1, 2, 3],
+    [8, 9, 0],
+  ])
+);
 
-task
+//task 3.5.2
+function maxSumString(arrayValue) {
+  let transposedArray = transposeArray(arrayValue);
+  return maxSumColumn(transposedArray);
+}
+printResult(
+  "3.5.2",
+  maxSumString([
+    [1, 2, 3],
+    [8, 9, 2],
+    [3, 1, 6],
+  ])
+);

@@ -337,3 +337,35 @@ printResult(
     [3, 1, 6],
   ])
 );
+
+//task 3.6
+function deleteColumnsWithZeroElement(arr) {
+  const columnIndexesToSave = [];
+  for (let i = 0; i < arr.length; i++) {
+    const isContainZero = arr[i].some((element) => element === 0);
+    const isSumPositive =
+      arr[i].reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        0
+      ) > 0;
+
+    if (isContainZero && isSumPositive) {
+      columnIndexesToSave.push(i);
+    }
+  }
+  const result = [];
+  for (let j = 0; j < columnIndexesToSave.length; j++) {
+    const columnIndexToSave = columnIndexesToSave[j];
+    result.push(arr[columnIndexToSave]);
+  }
+  return result;
+}
+printResult(
+  "3.6",
+  deleteColumnsWithZeroElement([
+    [1, 0, -13, 6],
+    [8, -9, 2, 0],
+    [3, 1, 9, -3],
+    [4, -22, 9, 8],
+  ])
+);

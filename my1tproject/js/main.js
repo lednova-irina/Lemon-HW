@@ -290,3 +290,25 @@ function MultiplyMatrix(matrix1, matrix2) {
   return result;
 }
 printResult("3.4", MultiplyMatrix(generateArray(3), generateArray(3)));
+
+//task 3.5.1
+
+function maxSumColumn(arrayValue) {
+  let columnSum = arrayValue[0].slice();
+  let maxColSum = 0;
+  for (let str = 1; str < arrayValue.length; str++) {
+    for (let col = 0; col < columnSum.length; col++) {
+      columnSum[col] += arrayValue[str][col];
+    }
+  }
+  for (let i = 0; i < columnSum.length; i++) {
+    if (maxColSum < columnSum[i]) {
+      maxColSum = columnSum[i];
+    } else {
+      return maxColSum;
+    }
+  }
+}
+printResult("3.5.1", maxSumColumn(generateArray(3)));
+
+task

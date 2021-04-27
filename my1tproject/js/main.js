@@ -388,4 +388,31 @@ function generateRandomArray(arrayLength, min, max) {
   }
   return result;
 }
-printResult("4.1", generateRandomArray(11, -2, 18));
+randomArray = generateRandomArray(11, -3, 17);
+printResult("4.1", randomArray);
+
+// task 4.2
+function calcPercentValueOfArray(arr) {
+  let minusValues = [];
+  let plusValues = [];
+  let zeroValues = [];
+  let inputArray = arr;
+  let outputResult = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < 0) {
+      minusValues.push(arr[i]);
+    } else if (arr[i] > 0) {
+      plusValues.push(arr[i]);
+    } else if (arr[i] == 0) {
+      zeroValues.push(arr[i]);
+    }
+  }
+  outputResult.push((zeroValues.length / arr.length) * 100);
+  outputResult.push((minusValues.length / arr.length) * 100);
+  outputResult.push((plusValues.length / arr.length) * 100);
+
+  console.log(`Input array of the task 4.2: `);
+  console.log(inputArray);
+  return outputResult;
+}
+printResult("4.2", calcPercentValueOfArray(randomArray));

@@ -369,3 +369,23 @@ printResult(
     [4, -22, 9, 8],
   ])
 );
+
+//task 4.1
+function generateRandomArray(arrayLength, min, max) {
+  const result = [];
+  for (let i = 0; i < arrayLength; i++) {
+    let n;
+    do {
+      n = Math.floor(Math.random() * (max - min) + min);
+      if (!result.includes(n)) {
+        break;
+      }
+    } while (true);
+    result[i] = n;
+  }
+  if (arrayLength > max - min) {
+    return [];
+  }
+  return result;
+}
+printResult("4.1", generateRandomArray(11, -2, 18));

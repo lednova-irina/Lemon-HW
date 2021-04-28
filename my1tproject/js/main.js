@@ -416,3 +416,20 @@ function calcPercentValueOfArray(arr) {
   return outputResult;
 }
 printResult("4.2", calcPercentValueOfArray(randomArray));
+
+// task 4.4
+function countingAmoutOfUniqueWords(str) {
+  str = str.replace(/[^a-zа-яё0-9\s]/gi, "");
+  let wordsArray = str.split(" ");
+  let result = {};
+
+  wordsArray.forEach(function (item) {
+    item in result ? result[item]++ : (result[item] = 1);
+  });
+  Object.getOwnPropertyNames(result).forEach(function (item) {
+    item + ": " + result[item];
+  });
+  return result;
+}
+let exampleString = "House, House, House, Dog, Dog, Dog, Dog";
+printResult("4.4", countingAmoutOfUniqueWords(exampleString));
